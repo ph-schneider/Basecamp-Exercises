@@ -1,0 +1,203 @@
+{
+  "runs": [
+    [
+      {
+        "task_id": "price_jeans",
+        "task_description": "Direct price lookup for jeans",
+        "query": "How much do jeans cost?",
+        "category": "product_lookup",
+        "passed": true,
+        "grades": [
+          {
+            "type": "response_contains",
+            "check": "49.99",
+            "score": 1.0,
+            "reason": "Found '49.99' in response"
+          },
+          {
+            "type": "tool_use",
+            "check": {
+              "tool_name": "get_product",
+              "arguments": {
+                "product": "jeans"
+              }
+            },
+            "score": 1.0,
+            "reason": "Tool 'get_product' called with matching args: {'product': 'jeans'}"
+          }
+        ],
+        "metrics": {
+          "time": 4.388,
+          "tool_calls": 1,
+          "turns": 2,
+          "input_tokens": 1424,
+          "output_tokens": 80
+        },
+        "final_text": "Jeans cost **$49.99**.",
+        "transcript": [
+          "How much do jeans cost?",
+          {
+            "citations": null,
+            "text": "I'll look up the price of jeans for you.",
+            "type": "text"
+          },
+          {
+            "id": "toolu_01WYWMWAoTgTAr6DsxGE4sZV",
+            "caller": {
+              "type": "direct"
+            },
+            "input": {
+              "product": "jeans"
+            },
+            "name": "get_product",
+            "type": "tool_use",
+            "toolset_name": null
+          },
+          {
+            "type": "tool_result",
+            "tool_use_id": "toolu_01WYWMWAoTgTAr6DsxGE4sZV",
+            "content": "49.99"
+          },
+          {
+            "citations": null,
+            "text": "Jeans cost **$49.99**.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "task_id": "price_t_shirt",
+        "task_description": "Direct price lookup for t-shirt",
+        "query": "How much does a t-shirt cost?",
+        "category": "product_lookup",
+        "passed": true,
+        "grades": [
+          {
+            "type": "response_contains",
+            "check": "24.99",
+            "score": 1.0,
+            "reason": "Found '24.99' in response"
+          },
+          {
+            "type": "tool_use",
+            "check": {
+              "tool_name": "get_product",
+              "arguments": {
+                "product": "t-shirt"
+              }
+            },
+            "score": 1.0,
+            "reason": "Tool 'get_product' called with matching args: {'product': 't-shirt'}"
+          }
+        ],
+        "metrics": {
+          "time": 2.997,
+          "tool_calls": 1,
+          "turns": 2,
+          "input_tokens": 1431,
+          "output_tokens": 84
+        },
+        "final_text": "A t-shirt costs **$24.99**.",
+        "transcript": [
+          "How much does a t-shirt cost?",
+          {
+            "citations": null,
+            "text": "I'll look up the price of a t-shirt for you.",
+            "type": "text"
+          },
+          {
+            "id": "toolu_01A69AsBxHxMMtsHoi4RshWG",
+            "caller": {
+              "type": "direct"
+            },
+            "input": {
+              "product": "t-shirt"
+            },
+            "name": "get_product",
+            "type": "tool_use",
+            "toolset_name": null
+          },
+          {
+            "type": "tool_result",
+            "tool_use_id": "toolu_01A69AsBxHxMMtsHoi4RshWG",
+            "content": "24.99"
+          },
+          {
+            "citations": null,
+            "text": "A t-shirt costs **$24.99**.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "task_id": "price_shoes",
+        "task_description": "Direct price lookup for shoes",
+        "query": "How much do shoes cost?",
+        "category": "product_lookup",
+        "passed": false,
+        "grades": [
+          {
+            "type": "response_contains",
+            "check": "79.99",
+            "score": 0.0,
+            "reason": "'79.99' not found in response: I apologize, but I wasn't able to retrieve pricing information for shoes. The product lookup didn't return any results for that general category.\n\nTo help you better, I could try searching for a more "
+          },
+          {
+            "type": "tool_use",
+            "check": {
+              "tool_name": "get_product",
+              "arguments": {
+                "product": "sneakers"
+              }
+            },
+            "score": 0.0,
+            "reason": "'get_product' not called with {'product': 'sneakers'}. Actual: [{'name': 'get_product', 'args': {'product': 'shoes'}}]"
+          }
+        ],
+        "metrics": {
+          "time": 3.812,
+          "tool_calls": 1,
+          "turns": 2,
+          "input_tokens": 1431,
+          "output_tokens": 190
+        },
+        "final_text": "I apologize, but I wasn't able to retrieve pricing information for shoes. The product lookup didn't return any results for that general category.\n\nTo help you better, I could try searching for a more specific type of shoe. For example:\n- Athletic shoes/sneakers\n- Casual shoes\n- Dress shoes\n- Boots\n- Loafers\n- Sandals\n\nCould you let me know what type of shoes you're interested in, or if there's a specific brand or style you'd like me to search for?",
+        "transcript": [
+          "How much do shoes cost?",
+          {
+            "citations": null,
+            "text": "I can help you find out how much shoes cost. Let me look that up for you.",
+            "type": "text"
+          },
+          {
+            "id": "toolu_01SdsmVWikKaMr4aag2ywyZq",
+            "caller": {
+              "type": "direct"
+            },
+            "input": {
+              "product": "shoes"
+            },
+            "name": "get_product",
+            "type": "tool_use",
+            "toolset_name": null
+          },
+          {
+            "type": "tool_result",
+            "tool_use_id": "toolu_01SdsmVWikKaMr4aag2ywyZq",
+            "content": "Error: 'shoes'"
+          },
+          {
+            "citations": null,
+            "text": "I apologize, but I wasn't able to retrieve pricing information for shoes. The product lookup didn't return any results for that general category.\n\nTo help you better, I could try searching for a more specific type of shoe. For example:\n- Athletic shoes/sneakers\n- Casual shoes\n- Dress shoes\n- Boots\n- Loafers\n- Sandals\n\nCould you let me know what type of shoes you're interested in, or if there's a specific brand or style you'd like me to search for?",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  ],
+  "config": {
+    "model": null,
+    "num_runs": 1,
+    "num_tasks": 3
+  }
+}
